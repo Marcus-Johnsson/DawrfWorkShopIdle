@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="DawrfWorkShopIdle.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DawrfWorkShopIdle"
+    xmlns:veiws="clr-namespace:DawrfWorkShopIdle.Veiw"
+    Shell.FlyoutBehavior="Flyout"
+    Title="DawrfWorkShopIdle">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    <ShellContent
+        Route="gamepage"
+        ContentTemplate="{DataTemplate veiws:GamePage}" />
+    <ShellContent
+        Route="Register"
+        ContentTemplate="{DataTemplate veiws:Register}"/>
+    <ShellContent
+        Route="LogIn"
+        ContentTemplate="{DataTemplate veiws:SignIn}"/>
+
+
+
+</Shell>
