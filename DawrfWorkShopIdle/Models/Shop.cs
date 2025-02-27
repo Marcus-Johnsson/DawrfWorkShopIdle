@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,8 +9,8 @@ namespace DawrfWorkShopIdle.Models
 {
     class Shop
     {
-        
 
+        public int Id { get; set; }
 
         public int ProductId { get; set; }
 
@@ -22,7 +23,26 @@ namespace DawrfWorkShopIdle.Models
 
         public Shop()
         {
-
+           
         }
+
+        public static void AdjustSupply()
+        {
+            
+            using(var MyDb = new MyDbContext())
+            {
+                var everyProduct = MyDb.Shop.ToList();
+
+                foreach(var product in everyProduct)
+                {
+                    int reduction = (int)(product.Demand * product.DemandReduceRate);
+
+                    int newSupply = Math.Max(0, product.Supply - reduction);
+                }
+                MyDb.SaveChanges();
+            }
+        }
+
+        
     }
 }

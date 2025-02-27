@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using Windows.ApplicationModel.Appointments.DataProvider;
 
 namespace DawrfWorkShopIdle.Models
 {
-    class Recepie
+    class Recipe
     {
       
             public int Id { get; set; }
@@ -18,13 +19,14 @@ namespace DawrfWorkShopIdle.Models
 
 
         public List<MaterialRequirement> MaterialsRequired { get; set; }
-        
+
 
         public class MaterialRequirement
         {
+            public int Id { get; set; }
             public int MaterialId { get; set; }
-            public Products Material { get; set; } 
-            public int Quantity { get; set; }  
+            public Products Material { get; set; }
+            public int Quantity { get; set; }
         }
     }
 }
