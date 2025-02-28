@@ -13,8 +13,6 @@ namespace DawrfWorkShopIdle.Calculations
 
                 foreach (var product in everyProducts)
                 {
-
-
                     if (product.IsBar)
                     {
                         continue; // ensure that ore price is not changed
@@ -26,7 +24,6 @@ namespace DawrfWorkShopIdle.Calculations
                     {
                         continue;
                     }
-
                     foreach (var material in recipe.MaterialsRequired)
                     {
                         if (material.Material.IsBar)

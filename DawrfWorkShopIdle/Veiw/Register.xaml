@@ -16,17 +16,30 @@
              Spacing="20"  
              Margin="0, 50, 0, 0">
 
-                <Entry x:Name="RegisterUsername" Placeholder="Username"> </Entry>
-                <Entry x:Name="RegisterPassword" Placeholder="Password" IsPassword="True"> </Entry>
-                <Button Text="Create Account"
+                <Entry x:Name="UsernameEntry" Placeholder="Username" TextChanged="OnUserNameTextChanged"></Entry>
+
+                <Label x:Name="AvailableLabelUsername" Text="" TextColor="Red"></Label>
+
+
+                <Entry x:Name="PasswordEntryFirst" Placeholder="Password" IsPassword="True" TextChanged="OnPasswordTextChanged"> </Entry>       <!--Write Password twice, to be sure its right spelled-->
+                
+                <Label x:Name="AvailableLabelPassword" Text="" TextColor="Red"></Label>
+
+                <Entry x:Name="PasswordEntrySecound" Placeholder="ReWrite Password" IsPassword="True" TextChanged="OnPasswordTextChanged"></Entry>
+
+                <Button x:Name="CreateAccount"
+                        Text="Create Account"
                         Clicked="OnCreateAccountClicked"
                         BackgroundColor="Transparent"
                         TextColor="Gold"
                         BorderColor="Gold"
                         BorderWidth="1">
+
+
                 </Button>
 
-                <Button Text="Cancel"
+                <Button x:Name="Cancel"
+                        Text="Cancel"
                         Clicked="OnCancelClicked"
                         BackgroundColor="Transparent"
                         TextColor="Gold"
